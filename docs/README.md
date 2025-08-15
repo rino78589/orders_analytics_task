@@ -29,13 +29,13 @@ pip install pandas openpyxl
 ### 2. Генерация тестовых данных
 Выполните скрипт generate_data.py, указав ваш e-mail в качестве seed для генератора данных.
 ```
-python data/generate_data.py --email your.email@example.com
+python data/generate_data.py --email your.email@example.com --orders 8000 --days 150
 ```
 В результате в папке data/ будут созданы три CSV-файла: sellers.csv, orders.csv, order_items.csv.
 ### 3. Сборка отчета
 Запустите основной скрипт build_report.py. По умолчанию он проанализирует данные за последние 90 дней и сохранит отчет в excel/Report.xlsx.
 ```
-python py/build_report.py --days 90
+python py/build_report.py --days 90 --out excel/Report.xlsx
 ```
 
 ## Технические решения и особенности
@@ -60,3 +60,4 @@ python py/build_report.py --days 90
 
 **Фрагмент, сгенерированный с помощью ИИ:**
 Основная помощь была получена при написании цикла для вывода данных на лист Checks. После того как логика самих проверок была определена и реализована (результаты помещены в словарь checks), был сформулирован промпт для генерации цикла, который бы аккуратно выводил эти данные на лист Excel с условным форматированием.
+
